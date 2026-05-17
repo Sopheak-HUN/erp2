@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "Cambodia ERP",
+    "description": "Multi-tenant ERP system for Cambodian businesses"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "accounting": "Accounting",
+    "tax": "Tax & GDT",
+    "payroll": "Payroll & HR",
+    "inventory": "Inventory",
+    "sales": "Sales",
+    "procurement": "Procurement",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "overview": "Business overview for the current period",
+    "revenue": "Revenue",
+    "expenses": "Expenses",
+    "invoices_due": "Invoices Due",
+    "employees": "Employees",
+    "recent_invoices": "Recent Invoices",
+    "tax_deadlines": "Tax Deadlines"
+  },
+  "accounting": {
+    "chart_of_accounts": "Chart of Accounts",
+    "journal_entries": "Journal Entries",
+    "posting_periods": "Posting Periods",
+    "financial_statements": "Financial Statements"
+  },
+  "tax": {
+    "invoices": "Tax Invoices",
+    "tax_rates": "Tax Rates",
+    "gdt_export": "GDT Export",
+    "vat_return": "VAT Return",
+    "wht_schedule": "WHT Schedule"
+  },
+  "payroll": {
+    "employees": "Employees",
+    "payslips": "Payslips",
+    "nssf_export": "NSSF Export",
+    "tos_schedule": "ToS Schedule"
+  },
+  "inventory": {
+    "products": "Products",
+    "stock": "Stock Levels",
+    "categories": "Categories"
+  }
+}

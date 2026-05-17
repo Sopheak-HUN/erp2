@@ -1,0 +1,104 @@
+services:
+  # Laravel API
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    container_name: cambodia-erp-app
+    restart: unless-stopped
+    working_dir: /var/www/api
+    volumes:
+      - ./api:/var/www/api
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      - APP_ENV=local
+      - DB_CONNECTION=pgsql
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_DATABASE=cambodia_erp
+      - DB_USERNAME=erp
+      - DB_PASSWORD=sopheak6844
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    networks:
+      - erp-network
+
+  # Nuxt 4 Frontend
+  web:
+    build:
+      context: .
+      dockerfile: docker/web/Dockerfile
+    container_name: cambodia-erp-web
+    restart: unless-stopped
+    working_dir: /var/www/web
+    volumes:
+      - ./web:/var/www/web
+    ports:
+      - "3001:3001"
+    environment:
+      - NUXT_PUBLIC_API_BASE=http://localhost:8000/api/v1
+    networks:
+      - erp-network
+
+  # PostgreSQL 16
+  postgres:
+    image: postgres:16-alpine
+    container_name: cambodia-erp-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: cambodia_erp
+      POSTGRES_USER: erp
+      POSTGRES_PASSWORD: sopheak6844
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U erp -d cambodia_erp"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - erp-network
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    container_name: cambodia-erp-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - erp-network
+
+  # Mailpit (local email testing)
+  mailpit:
+    image: axllent/mailpit:latest
+    container_name: cambodia-erp-mailpit
+    restart: unless-stopped
+    ports:
+      - "8025:8025"  # Web UI
+      - "1025:1025"  # SMTP
+    networks:
+      - erp-network
+
+volumes:
+  postgres-data:
+  redis-data:
+
+networks:
+  erp-network:
+    driver: bridge

@@ -1,0 +1,49 @@
+{
+  "app": {
+    "title": "ប្រព័ន្ធ ERP កម្ពុជា",
+    "description": "ប្រព័ន្ធ ERP សម្រាប់អាជីវកម្មកម្ពុជា"
+  },
+  "nav": {
+    "dashboard": "ផ្ទាំងគ្រប់គ្រង",
+    "accounting": "គណនេយ្យ",
+    "tax": "ពន្ធ និង អគរ",
+    "payroll": "បៀវត្សរ៍ និង ធនធានមនុស្ស",
+    "inventory": "សន្និធិ",
+    "sales": "លក់",
+    "procurement": "ការទិញ",
+    "settings": "ការកំណត់"
+  },
+  "dashboard": {
+    "overview": "ទិដ្ឋភាពទូទៅអាជីវកម្មសម្រាប់រយៈពេលបច្ចុប្បន្ន",
+    "revenue": "ចំណូល",
+    "expenses": "ចំណាយ",
+    "invoices_due": "វិក្កយបត្រដល់កំណត់",
+    "employees": "និយោជិត",
+    "recent_invoices": "វិក្កយបត្រថ្មីៗ",
+    "tax_deadlines": "ថ្ងៃកំណត់បង់ពន្ធ"
+  },
+  "accounting": {
+    "chart_of_accounts": "គម្រោងគណនី",
+    "journal_entries": "បញ្ជីអនុស្សរណៈ",
+    "posting_periods": "រយៈពេលបិទបញ្ជី",
+    "financial_statements": "របាយការណ៍ហិរញ្ញវត្ថុ"
+  },
+  "tax": {
+    "invoices": "វិក្កយបត្រអាករ",
+    "tax_rates": "អត្រាពន្ធ",
+    "gdt_export": "នាំចេញ អគរ",
+    "vat_return": "បង់អាករលើតម្លៃបន្ថែម",
+    "wht_schedule": "កាលវិភាគពន្ធកាត់ទុក"
+  },
+  "payroll": {
+    "employees": "និយោជិត",
+    "payslips": "បន្ទះប្រាក់ខែ",
+    "nssf_export": "នាំចេញ បសស",
+    "tos_schedule": "កាលវិភាគពន្ធលើប្រាក់បៀវត្សរ៍"
+  },
+  "inventory": {
+    "products": "ផលិតផល",
+    "stock": "កម្រិតស្តុក",
+    "categories": "ប្រភេទ"
+  }
+}

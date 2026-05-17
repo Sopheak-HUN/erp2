@@ -1,0 +1,9 @@
+{
+  "_hash": "ygkRJy24SqKAw4k8JdI0awkwVAUHgAXT8SDjDgemaRI",
+  "project": {
+    "rootDir": "/var/www/web"
+  },
+  "versions": {
+    "nuxt": "4.4.5"
+  }
+}

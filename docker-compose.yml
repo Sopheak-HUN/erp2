@@ -26,6 +26,7 @@ services:
       - DB_PASSWORD=sopheak6844
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - CACHE_STORE=redis
     networks:
       - erp-network
 

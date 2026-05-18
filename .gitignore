@@ -19,3 +19,11 @@ Thumbs.db
 postgres-data/
 redis-data/
 /vendor
+
+# Nuxt
+.nuxt/
+.output/
+.vercel/
+.turbo/
+.open-next/
+.wrangler/

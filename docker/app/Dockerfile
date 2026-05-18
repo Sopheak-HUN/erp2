@@ -20,6 +20,11 @@ RUN apt-get update && apt-get install -y \
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+COPY .env.example .env 
+RUN php artisan key:generate
+
+
+
 # Set working directory
 WORKDIR /var/www/api
 

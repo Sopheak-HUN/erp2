@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf /home/sopheak/Project/own/cambodia-erp/web/pages)",
+      "Read(//home/sopheak/Project/own/cambodia-erp/web/app/pages/**)"
+    ]
+  }
+}
